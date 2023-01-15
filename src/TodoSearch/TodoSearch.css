@@ -1,0 +1,15 @@
+#idbusca{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+.input-group{
+    
+    right: 0;
+    width: 80%;
+}
+#Butons{
+    z-index: 5;
+}

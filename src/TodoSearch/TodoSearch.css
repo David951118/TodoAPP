@@ -13,3 +13,6 @@
 #Butons{
     z-index: 5;
 }
+#idbusca:disabled{
+    opacity: 25%;
+}

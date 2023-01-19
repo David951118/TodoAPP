@@ -43,3 +43,6 @@
     .hit-the-floor {
       text-align: center;
     }
+.Counter--text--loading{
+    opacity: 25%;
+}

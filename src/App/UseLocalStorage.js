@@ -4,6 +4,7 @@ function useLocalStorage(itemName, initialValue){
     const [error,setError] = React.useState(false);
     const [loading, setLoading] = React.useState(true);
     const [item, setItem] = React.useState(initialValue);
+    const [syncronisedItem,setSyncronisedItem]= React.useState(true);
   
     React.useEffect(() => {
       try{
@@ -20,11 +21,12 @@ function useLocalStorage(itemName, initialValue){
           }
           setItem(parsedItem);
           setLoading(false);
+          setSyncronisedItem(true);
         },1000);}
         catch(error){
           setError(error);
         }
-      }
+      },[syncronisedItem]
     );
   
   
@@ -38,13 +40,18 @@ function useLocalStorage(itemName, initialValue){
         setError(error);
       }
     };
-  
+    const sincronizeItem=()=>{
+      setLoading(true);
+      setSyncronisedItem(false);
+
+    }
     // Regresamos los datos que necesitamos
     return {
       item,
       saveItem,
       loading,
       error,
+      sincronizeItem,
     };
   }
 
